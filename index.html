@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub Finder — Pro</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🚀 GitHub Finder <span class="badge">Pro</span></div>
+    <div class="controls">
+      <input id="searchInput" placeholder="Enter GitHub username (e.g. torvalds)" />
+      <button id="searchBtn">🔍 Search</button>
+      <button id="themeBtn">🌙</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- left column: search history & trending -->
+    <aside class="leftcol">
+      <section id="searchHistory" class="card">
+        <h3>📌 Search History</h3>
+        <div id="historyList"></div>
+        <button id="clearHistory" class="small">Clear</button>
+      </section>
+
+      <section id="trending" class="card">
+        <h3>🔥 Trending Repos</h3>
+        <div id="trendingList">Loading...</div>
+      </section>
+
+      <section id="statsCard" class="card">
+        <h3>📊 GitHub Stats</h3>
+        <div id="statsArea">Search a user to show stats</div>
+      </section>
+    </aside>
+
+    <!-- center column: profile & contributions -->
+    <section class="centercol">
+      <div id="profile" class="card">Search a GitHub username to start.</div>
+      <div id="contributions" class="card"></div>
+    </section>
+
+    <!-- right column: repos & activity -->
+    <aside class="rightcol">
+      <section id="pinned" class="card">
+        <h3>📌 Pinned Repos (Top 3)</h3>
+        <div id="pinnedList">—</div>
+      </section>
+
+      <section id="repos" class="card">
+        <h3>📂 Top Repositories</h3>
+        <div id="repoList">—</div>
+      </section>
+
+      <section id="activity" class="card">
+        <h3>🕒 Recent Activity</h3>
+        <div id="activityList">—</div>
+      </section>
+
+      <section id="summary" class="card">
+        <h3>🧠 Auto Summary</h3>
+        <div id="summaryText">Search a user to generate summary</div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Built for resume & campus placements — Harsh's GitHub Finder Pro
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

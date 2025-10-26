@@ -1,0 +1,63 @@
+:root{
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:var(--text);}
+
+/* topbar */
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;padding:14px 20px;
+  background:linear-gradient(90deg,#022046,#0b3d91);color:#fff;
+}
+.brand{font-weight:700;font-size:18px}
+.brand .badge{background:#fff;color:#022046;border-radius:6px;padding:2px 6px;margin-left:8px;font-weight:600;font-size:12px}
+.controls{display:flex;gap:8px;align-items:center}
+.controls input{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.18);min-width:240px}
+.controls button{padding:8px 10px;border-radius:8px;border:none;background:#fff;color:#022046;cursor:pointer;font-weight:600}
+
+/* layout */
+.main{display:flex;gap:18px;padding:18px;max-width:1200px;margin:18px auto}
+.leftcol{width:22%;display:flex;flex-direction:column;gap:12px}
+.centercol{width:48%;display:flex;flex-direction:column;gap:12px}
+.rightcol{width:30%;display:flex;flex-direction:column;gap:12px}
+
+.card{
+  background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 20px rgba(2,32,71,0.06);
+}
+
+/* profile */
+#profile img.avatar{width:120px;border-radius:50%;display:block;margin:8px auto;border:4px solid var(--accent)}
+.profile-meta{display:flex;gap:12px;align-items:center;justify-content:center}
+.profile-row{display:flex;gap:12px;justify-content:center;margin-top:8px}
+.small{font-size:13px;padding:6px 8px;border-radius:8px;background:#eee}
+
+/* lists */
+.repo-item, .pinned-item, .activity-item, .history-item, .trend-item{
+  padding:8px;border-radius:8px;margin:8px 0;background:#fbfdff;border:1px solid #eef6ff;
+}
+.repo-item a, .pinned-item a, .trend-item a{font-weight:700;color:#0366d6;text-decoration:none}
+.muted{color:var(--muted);font-size:13px}
+
+/* contributions */
+#contributions img{width:100%;max-width:680px;border-radius:8px;display:block;margin:8px auto}
+
+/* dark mode */
+body.dark{
+  --bg:#0b1220;--card:#0f1724;--text:#e6eef8;--muted:#9aa7bf
+}
+body.dark .topbar{background:linear-gradient(90deg,#071022,#08213a)}
+body.dark .controls input{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff}
+body.dark .controls button{background:#0ea5e9;color:#01203a}
+body.dark .repo-item, body.dark .pinned-item, body.dark .activity-item, body.dark .trend-item{background:#071027;border:1px solid rgba(255,255,255,0.03)}
+
+/* responsive */
+@media (max-width:980px){
+  .main{flex-direction:column;padding:10px}
+  .leftcol,.centercol,.rightcol{width:100%}
+  .controls input{min-width:120px}
+}
